@@ -26,6 +26,10 @@ export default function App() {
     }    
   }
 
+  const formatResult = (result)=>{
+    return result.toString().replace(/,/gi, ', ')
+  }
+
   return (
     <div className='page'>
       <Header />
@@ -46,9 +50,9 @@ export default function App() {
           {hasResult && (
             <div>
               <h3 className="title">Resultado</h3>
-              <p>Número informado: {resultDecompose.number}</p>
-              <p>Divisores: {resultDecompose.factors.toString()}</p>
-              <p>Divisores primos: {resultDecompose.primeFactors.toString()}</p>
+              <p><b>Número informado:</b> {resultDecompose.number}</p>
+              <p><b>Divisores:</b> {formatResult(resultDecompose.factors)}</p>
+              <p><b>Divisores primos:</b> {formatResult(resultDecompose.primeFactors)}</p>
           </div>
           )}          
         </div>
